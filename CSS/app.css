@@ -1,0 +1,111 @@
+body {
+    text-align: center;
+    background-color: aqua;
+}
+
+p {
+    color: gray;
+    border: 1px solid blue;
+}
+
+h1 {
+    font-weight: 300px;
+}
+
+/* h1:hover {
+    color: blue;
+    background-color: beige;
+}
+
+p:hover {
+    color: black;
+    background-color: bisque;
+}
+
+button {
+    border-radius: 4px;
+    background-color: aqua;
+
+}
+
+button:hover {
+    color: azure;
+}
+
+button:focus {
+    border-radius: 10px;
+    background-color: darkred;
+}
+
+button:active {
+     background-color: olivedrab;
+     font-size: 30px;
+}
+
+input:focus {
+    color: royalblue;
+    background-color: blanchedalmond;
+}
+
+p:active,
+h1:active {
+    color: yellowgreen;
+} */
+/* ------------------------------------ */
+
+.btn {
+    font-size: 4rem;
+    font-weight: 300px;
+    outline: none;
+    border:none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    background-color: mediumseagreen;
+    color: azure;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 25px 80px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 6px rgb(29, 95, 70);
+}
+
+.btn:hover {
+
+    box-shadow: 0 4px rgb(29, 95, 70);
+    top: 2px;
+}
+
+.btn:active {
+
+    box-shadow: none;
+    top: 6px;
+}
+
+p {
+    width: 50px;
+    height: 50px;
+    background-color: #1abc9c;
+    margin: 0 auto;
+    margin-top: 2rem;
+    position: relative;
+}
+
+p.move-right {
+    background-color: #3498db;
+    transform: translateX(100px);
+    transform: rotate(90deg);
+}
+
+p.move-down {
+    background-color: #f1c40f;
+    transform: rotate(45deg);
+}
+
+p:hover {
+    /* transform: translate(20px, 20px); */
+    transform: scale(2);
+    transform-origin: left;
+    transform: rotate(45deg);
+}
