@@ -3,11 +3,6 @@ body {
     background-color: aqua;
 }
 
-p {
-    color: gray;
-    border: 1px solid blue;
-}
-
 h1 {
     font-weight: 300px;
 }
@@ -84,17 +79,37 @@ h1:active {
 }
 
 p {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     background-color: #1abc9c;
-    margin: 0 auto;
-    margin-top: 2rem;
-    position: relative;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    border-radius: 20px;
+    
 }
 
-p.move-right {
+.animated {
+    /* transition-property: background-color, border-radius;
+    transition-duration: 3s, .3s;
+    transition-delay: 2s, 4s; */
+    transition: transform 1.5s ease-in 1s, background-color 0.5s linear;
+}
+.box:hover {
+    /* background: #08362d;
+    transform-origin: top left;
+    transform: scale(2) rotate(45deg);
+    border-radius: 50px; */
+    /* opacity: 0.5; */
+    transform: translate(300px);
+    background-color: teal;
+}
+
+
+
+/* p.move-right {
     background-color: #3498db;
-    transform: translateX(100px);
     transform: rotate(90deg);
 }
 
@@ -103,9 +118,4 @@ p.move-down {
     transform: rotate(45deg);
 }
 
-p:hover {
-    /* transform: translate(20px, 20px); */
-    transform: scale(2);
-    transform-origin: left;
-    transform: rotate(45deg);
-}
+
