@@ -98,3 +98,41 @@ div.item:hover i{
     transform: translate(-50%, -50%) scale(1);
     transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+p {
+    animation-name: rainbowtext;
+    animation-duration: 10s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rainbowtext {
+    0% {
+        color: red;
+        font-size: 20px;
+    }
+
+    25% {
+        color: orange;
+    }
+
+    50% {
+        color: yellow;
+        /* font-size: 40px; */
+        transform: scale(2) translateX(400px);
+    }
+
+    75% {
+        color: green;
+    }
+
+    85% {
+        color: blue
+    }
+
+    100% {
+        color: purple;
+        font-size: 20px;
+    }
+}
