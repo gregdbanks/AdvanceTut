@@ -16,7 +16,7 @@
 //     XHR.send();
 // });
 
-var url = 'https://dog.ceo/api/breeds/image/random';
+var url = "https://randomuser.me/api/";
 
 fetch(url)
     .then(function (response) {
