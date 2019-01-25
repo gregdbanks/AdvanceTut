@@ -37,13 +37,13 @@
 
 // console.log(onlyFirstName([{first: "Greg", last: "smith"}, {first: "Sam", last: "adams"}]));
 
-function doubleValues(arr) {
+function valTimesIndex(arr) {
     return arr.map(function(val, index) {
         return val * index;
     });
 }
 
-console.log(doubleValues([4,5,6]));
+console.log(valTimesIndex([4,5,6]));
 
 function extractKey(arr, key) {
     return arr.map(function (val) {
