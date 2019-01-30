@@ -1,8 +1,4 @@
-Write a function called findInObj which accepts an array of objects, a key, and some value to search for and returns the first found value in the arrayt.
 
-Examples:
-    findInObj([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner',true) // {first: 'Tim', last:"Garcia", isCatOwner: true}
-*/
 // function findInObj(arr, key, searchValue) {
 //     return arr.filter(function(val) {
 //         return val[key] === searchValue;
@@ -219,19 +215,32 @@ Examples:
     hasCertainValue(arr,'first','Elie') // false
     
 */
-var arr = [
-    { title: "Instructor", first: 'Elie', last: "Schoppik" },
-    { title: "Instructor", first: 'Tim', last: "Garcia", isCatOwner: true },
-    { title: "Instructor", first: 'Matt', last: "Lane" },
-    { title: "Instructor", first: 'Colt', last: "Steele", isCatOwner: true }
-];
+// var arr = [
+//     { title: "Instructor", first: 'Elie', last: "Schoppik" },
+//     { title: "Instructor", first: 'Tim', last: "Garcia", isCatOwner: true },
+//     { title: "Instructor", first: 'Matt', last: "Lane" },
+//     { title: "Instructor", first: 'Colt', last: "Steele", isCatOwner: true }
+// ];
 
-function hasCertainValue(arr, key, searchValue) {
-    return arr.every(function (val) {
-        return val[key] === searchValue;
-    });
-}
+// function hasCertainValue(arr, key, searchValue) {
+//     return arr.every(function (val) {
+//         return val[key] === searchValue;
+//     });
+// }
 
-var x =
-    hasCertainValue(arr, 'title', 'Instructor');
-    console.log(x);
+// var x =
+//     hasCertainValue(arr, 'title', 'Instructor');
+//     console.log(x);
+
+function findX(arr, searchValue) {
+    return arr.filter(function (val) {
+        return val === searchValue;
+    })[0];
+};
+
+var x = findX([{ first: 'Elie', last: "Schoppik" },
+{ first: 'Tim', last: "Garcia", isCatOwner: true },
+{ first: 'Matt', last: "Lane" },
+{ first: 'Colt', last: "Steele", isCatOwner: true }],
+    { 'isCatOwner': true });
+console.log(x)
