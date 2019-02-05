@@ -135,15 +135,111 @@
 
 // NOW ONE STEP FURTHER -------------------------------------
 
-function sayHi() {
-    return "Hi " + this.firstName;
-}
-var cory = {
-    firstName: "Cory"
-}
+// function sayHi() {
+//     return "Hi " + this.firstName;
+// }
+// var cory = {
+//     firstName: "Cory"
+// }
 
-var jared = {
-    firstName: "Jared"
-}
-console.log(sayHi.call(cory));
-console.log(sayHi.call(jared));
+// var jared = {
+//     firstName: "Jared"
+// }
+// // explicitly binds sayHi to cory and jared returning string
+// console.log(sayHi.call(cory));
+// console.log(sayHi.call(jared));
+
+// Now that we have seen CALL lets take a look at APPLY------------
+
+// var nums = [5,7,8,9,6];
+
+// console.log(Math.max(nums));
+
+// console.log(Math.max.apply(this, nums));
+
+// function sumValues(a,b,c) {
+//     return a+b+c;
+// }
+
+// var values = [3,9,9];
+
+// console.log(sumValues.apply(this, values));
+
+// ----------------BIND-------------------------------------
+
+// function addNumbers(a,b,c,d){
+//     return this.firstName + " Just Calculated " + (a+b+c+d);
+// }
+
+// var ronnie = {
+//     firstName: "Ronnie"
+// }
+
+// var ronnieCalc = addNumbers.bind(ronnie,1,2);
+
+// console.log(ronnieCalc);
+
+// console.log(ronnieCalc(9,9));
+
+// var zabel = {
+//     firstName: "Zabel",
+//     sayHi: function(){
+//         setTimeout(function(){
+//             console.log("Hi " + this.firstName);
+//         },5000)
+//     }
+// }
+
+// var zabel = {
+//     firstName: "Zabel",
+//     sayHi: function () {
+//         setTimeout(function () {
+//             console.log("Hi " + this.firstName);
+//         }.bind(this), 1000)
+//     }
+// }
+
+// zabel.sayHi();
+
+// ---------------BIND is used for async code, doesnt initially invoke function, gives back a function for later use
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
