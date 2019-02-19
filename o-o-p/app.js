@@ -72,3 +72,5 @@ function Child(firstName, lastName, favoriteColor, favoriteFood) {
     Parent.apply(this, arguments);
 
 }
+
+console.log(new Child("suzie", "q", "black", "pizza").__proto__);
