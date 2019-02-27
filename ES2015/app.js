@@ -117,7 +117,7 @@ Example:
     createStudentObj('Elie', 'Schoppik') // {firstName: 'Elie', lastName: 'Schoppik'}
 */
 
-var createStudenObj = (firstName, lastName) => ({firstName: firstName, lastName: lastName});
+var createStudentObj = (firstName, lastName) => ({firstName: firstName, lastName: lastName});
 
 /* 5 - Given the following code:
 
