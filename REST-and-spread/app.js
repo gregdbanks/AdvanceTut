@@ -161,24 +161,14 @@ Examples:
 */
 
 
-function flip(fn, thisArg, ...outerArgs) {
-    return function(...innerArgs){
-        let allArgs = outerArgs.concat(innerArgs).slice(0, fn.length);
-        return fn.apply(thisArg, allArgs.reverse())
-    }
+// function flip(fn, thisArg, ...outerArgs) {
+//     return function(...innerArgs){
+//         let allArgs = outerArgs.concat(innerArgs).slice(0, fn.length);
+//         return fn.apply(thisArg, allArgs.reverse())
+//     }
 
-}
-function personSubtract(a, b, c) {
-    return this.firstName + " subtracts " + (a - b - c);
-}
+// }
 
-var person = {
-    firstName: 'Elie'
-}
-
-var flipFn = flip(personSubtract, person);
-console.log(flipFn(3, 2, 1))
- // "Elie subtracts -4"
 
 /* 
 Write a function called bind which accepts a function and a value for the keyword this. Bind should return a new function that when invoked, will invoke the function passed to bind with the correct value of the keyword this. HINT - if you pass more than two parameters to bind, those parameters should be included as parameters to the inner function when it is invoked. You will have to make use of closure!
@@ -212,9 +202,9 @@ Examples:
 
 */
 
-// function bind(fn, thisArg) {
-//     var newFunc = function(){
-//         return ... thisArg;
+// function bind(fn, thisArg, ...outerArgs) {
+//     return function(...innerArgs){
+//         return fn.apply(thisArg, [...outerArgs, ...innerArgs])
 //     }
-//     return newFunc();
+
 // }
