@@ -132,16 +132,16 @@ Examples:
 //     return [name.first, name.last, isHilarious];
 // }
 // you will have to pass in the correct parameters for this function!
-// function createStudent({likesES2015 = true, likesJavascript = true} = {}) {
+// function createStudent({likesJavaScript = true, likesES2015 = true} = {}) {
 //     var start = 'The student';
-//     if(likesES2015 && likesJavascript){
-//         return start += ' likes JavaScript and ES2015'
-//     } else if (likesJavascript){
-//         return start += ' likes Javascript!'
+//     if(likesJavaScript && likesES2015){
+//         start += ' likes JavaScript and ES2015'
+//     } else if (likesJavaScript){
+//         start += ' likes Javascript!'
 //     } else if (likesES2015){
-//         return start += ' likes ES2015'
+//         start += ' likes ES2015'
 //     } else {
-//         return start += ' does not like much...'
+//         start += ' does not like much...'
 //     }
 //     return start;
 // }
@@ -157,15 +157,27 @@ Examples:
     reverseArray([1,2,3,4,5,6,7,8,9,10]) // [10,9,8,7,6,5,4,3,2,1
 */
 
-function reverseArray(arr) {
-    for(var i = 0; i < arr.length/2; i++){
-        [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length -1 -i], arr[i]];
-    }
-}
+// function reverseArray(arr) {
+//     for(var i = 0; i < arr.length/2; i++){
+//         [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length -1 -i], arr[i]];
+//     }
+// }
 
 
-console.log(reverseArray([1,2,3,4]))
+var o = { p: 42, q: true };
+var { p, q } = o;
 
+console.log(p); // 42
+console.log(q); // true
+var o = { p: 42, q: true };
+var { p: foo, q: bar } = o;
+
+console.log(foo); // 42 
+console.log(bar); // true
+var { a = 10, b = 5 } = { a: 3 };
+
+console.log(a); // 3
+console.log(b); // 5
 
 
 
