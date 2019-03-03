@@ -60,21 +60,23 @@ Examples:
 // var cory = new Person('Cory', 'Williams', "Green", 8);
 // console.log(cory.multiplyFavoriteNumber(4));
 
-class Person {
-    constructor(firstName, lastName, favoriteColor, favoriteNumber){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.favoriteColor = favoriteColor;
-        this.favoriteNumber = favoriteNumber;
-    }
-    sayHello(){
-        return `Hello ${this.firstName} ${this.lastName}`;
-    }
-}
+// class Person {
+//     constructor(firstName, lastName, favoriteColor, favoriteNumber){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.favoriteColor = favoriteColor;
+//         this.favoriteNumber = favoriteNumber;
+//     }
+//     sayHello(){
+//         return `Hello ${this.firstName} ${this.lastName}`;
+//     }
+// }
 
-class Student extends Person {
-    
-}
+// class Student extends Person {
 
-var cory = new Student('Cory', 'Williams');
-console.log(cory.sayHello());
+// }
+
+// var cory = new Student('Cory', 'Williams');
+// console.log(cory.sayHello());
+
+
