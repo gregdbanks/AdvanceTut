@@ -41,7 +41,7 @@ class MessageBoard {
     m.id // 1
     */
 
-    constructor(messages, id) {
+    constructor() {
         this.messages = Map();
         this.id = 1;
     }
@@ -57,8 +57,10 @@ class MessageBoard {
     m.addMessage('awesome!').addMessage('nice!').addMessage('cool!') 
     */
 
-    addMessage(string) {
-
+    addMessage(x) {
+        this.messages.set(this.id, x);
+        this.id++
+        return this;
     }
 
     /*
@@ -76,8 +78,8 @@ class MessageBoard {
     m.findMessageById() // undefined
     */
 
-    findMessageById() {
-
+    findMessageById(id) {
+        return this.messages.get(id);
     }
 
     /*
@@ -95,8 +97,10 @@ class MessageBoard {
     */
 
 
-    findMessageByValue() {
-
+    findMessageByValue(value) {
+        for(let msg of this.messages.values()){
+            if(msg === val) return msg;
+        }
     }
 
     /*
@@ -112,8 +116,9 @@ class MessageBoard {
     m.removeMessage() // m
     */
 
-    removeMessage() {
-
+    removeMessage(x) {
+        this.messages.delete(x);
+        return this;
     }
 
     /*
@@ -127,7 +132,7 @@ class MessageBoard {
     */
 
     numberOfMessages() {
-
+        return this.messages.size;
     }
 
     /*
@@ -141,9 +146,8 @@ class MessageBoard {
     */
 
     messagesToArray() {
-
+        return Array.from(this.messages.values());
     }
-}
 
 /*
 Write a function called uniqueValues which accepts an array and returns the number of unique values in the array
@@ -151,8 +155,8 @@ Write a function called uniqueValues which accepts an array and returns the numb
 uniqueValues([1,1,2,2,2,3,3,3,3,4,4,4,5,5,6]) // 6
 */
 
-function uniqueValues() {
-
+function uniqueValues(arr) {
+    return new Set(arr).size;
 }
 
 /*
@@ -165,7 +169,7 @@ hasDuplicates([]) // false
 */
 
 function hasDuplicates() {
-
+    return new Set(arr).size !== arr.length;
 }
 
 /*
@@ -181,8 +185,14 @@ countPairs([5,4,-10,6,-20,16],-4) // 2
 countPairs([0,-4],-4) // 1
 */
 
-function countPairs() {
-
+function countPairs(arr, num) {
+    var cache = new Set(arr);
+    var count = 0;
+    for(let val of arr){
+        cache.delete(val);
+        if(cache.has(num - val)){
+            count++;
+        }
+    }
+    return count;
 }
-var m = new MessageBoard;
-console.log(m.messages.constructor);
