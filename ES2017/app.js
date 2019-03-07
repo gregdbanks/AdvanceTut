@@ -105,8 +105,7 @@ async function getMostFollowers(...usernames) {
     return `${max.name} has the most followers with ${max.followers}`
     }
 
-var x = getMostFollowers('greg', 'cory', 'jared');
-console.log(x);
+
 
 // async function starWarsString(num) {
 //     var movieData = await $.getJSON(`https://swapi.co/api/people/${num}`);
