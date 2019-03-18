@@ -1,4 +1,13 @@
 
+var width = 800;
+var height = 400;
+var barPadding = 10;
+var svg = d3.select('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+
+
 d3.select("#reset")
     .on("click", function(){
         d3.selectAll(".letter")
@@ -16,10 +25,13 @@ d3.select("form")
         d3.event.preventDefault();
         var input = d3.select("input");
         var text = input.property("value");
-
-        var letters = d3.select("#letters")
+        var data = getFrequencies(text);
+        var barWidth = width / data.length - barPadding;
+        var letters = svg
                         .selectAll(".letter")
-                        .data(getFrequencies(text), d => d.character);
+                        .data(data, function(d) {
+                            return d.character;
+                        });
 
         letters
             .classed("new", false)
@@ -27,17 +39,41 @@ d3.select("form")
           .remove()
 
 
-          letters
+          var letterEnter = letters
           .enter()
-          .append("div")
+          .append("g")
             .classed("letter", true)
-            .classed("new", true)
-          .merge(letters)
-            .style("width", "20px")
-            .style("line-height", "20px")
-            .style("margin-right", "5px")
-            .style("height", d => d.count * 20 + "px")
-            .text(d => d.character);
+            .classed("new", true);
+
+        letterEnter.append("rect");
+        letterEnter.append("text");
+          
+        letterEnter.merge(letters)
+            .select('rect')
+                .style("width", barWidth)
+                .style("height", function(d){ 
+                    return d.count * 20;
+                })
+                .attr('x', function(d, i) {
+                    return (barWidth + barPadding) * i;
+                })
+                .attr('y', function(d) {
+                    return height - d.count * 20;
+                });
+
+        letterEnter.merge(letters)
+            .select('text')
+                .attr('x', function(d, i){
+                    return (barWidth + barPadding) * i + barWidth / 2;
+                })
+                .attr("text-anchor", "middle")
+                .attr("y", function(d){
+                    return height - d.count * 20 -10;
+                })
+                .text(function(d){
+                    return d.character;
+                });
+        
 
         d3.select("#phrase")
             .text(`Analysis of: ${text}`);
