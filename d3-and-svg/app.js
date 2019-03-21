@@ -1,14 +1,18 @@
 
 
 
-var minYear = birthData[0].year;
-var maxYear = birthData[birthData.length - 1].year;
+var minYear = d3.min(birthData, d => d.year);
+var maxYear = d3.max(birthData, d => d.year);
 var width = 600;
 var height = 600;
 var barPadding = 10;
 var numBars = 12;
 // below is how to spread bars evenly within a set svg width! cool
 var barWidth = width / numBars - barPadding;
+var maxBirths = d3.max(birthData, d => d.births);
+var yScale = d3.scaleLinear()
+                .domain([0, maxBirths])
+                .range([height, 0]);
 
 
 d3.select('input')
@@ -27,7 +31,7 @@ d3.select('svg')
   .append('rect')
     .attr('width', barWidth)
     .attr('height', function(d) {
-            return d.births / 2.5e6 * height;
+            return height - yScale(d.births);
         })
     .attr('y', function(d) {
             return height - d.births / 2.5e6 * height;
@@ -45,9 +49,9 @@ d3.select('input')
                     return d.year === year;
                 }))
                 .attr('height', function(d) {
-                    return d.births / 2.5e6 * height;
+                    return height - yScale(d.births);
                 })
                 .attr('y', function(d) {
-                    return height - d.births / 2.5e6 * height;
+                    return yScale(d.births);
                 });
     })
