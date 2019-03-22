@@ -1,4 +1,5 @@
 var regionData = [
+
   {
     "region": "Afghanistan",
     "subscribersPer100": 60,
