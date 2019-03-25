@@ -2,7 +2,7 @@ var width = 500;
 var height = 500;
 var padding = 30;
 
-// var yMax = d3.max(birthData2011, d => d.lifeExpectancy);
+// var yMax = d3.max(birthData2011, d => d.lifeExpectancy);!!!
 // var yMin = d3.min(birthData2011, d => d.lifeExpectancy);
 
 // yscal is tricky and because an increase on yscale goes 
