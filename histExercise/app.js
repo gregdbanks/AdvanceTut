@@ -1,7 +1,7 @@
 var width = 800;
 var height = 600;
 var padding = 50;
-var barPadding = 1;
+var barPadding = 4;
 var ageData = regionData.filter(d => d.medianAge !== null);
 var initialBinCount = 16;
 
