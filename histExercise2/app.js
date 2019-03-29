@@ -3,10 +3,11 @@ var width = 1000,
     height = 600,
     padding = 70;
     
-var barPadding = 4;
+var barPadding = 1;
 
 
 var yearData = oilData.filter(d => d.year !== null);
+var inflationData = oilData.filter(d => d.inflation !== null);
 
 var initialBinCount = 16;
     
@@ -55,12 +56,17 @@ updateRects(initialBinCount);
             .domain(xScale.domain())
             .thresholds(xScale.ticks(val))
             .value(d => d.year);
+        
+       
+            
 
         var bins = histogram(yearData);
+        var bins2 = d3.max(inflationData, d => d.inflation);
+      
         
 
         var yScale = d3.scaleLinear()
-            .domain([0, d3.max(bins, d => d.inflation)])
+            .domain([0, d3.max(inflationData, d => d.inflation)])
             .range([height - padding, padding]);
 
         d3.select(".y-axis")
@@ -88,14 +94,22 @@ updateRects(initialBinCount);
             .append("rect")
             .merge(rect)
             .attr("x", d => xScale(d.x0))
-            .attr("y", d => yScale(d.inflation))
-            .attr("height", d => height - padding - yScale(d.inflation))
+            // recap on this: dont want length, need average price adjusted for inflation
+            .attr("y", d => yScale(d.length))
+            .attr("height", d => height - padding - yScale(d.length))
             .attr("width", d => xScale(d.x1) - xScale(d.x0) - barPadding)
-            .attr("fill", "blue");
+            .attr("fill", "gray");
 
         d3.select(".bin-count")
             .text("Number of bins: " + bins.length);
-        console.log(bins)
+
+            console.log(bins)
+        
+        
+        
+
+            
+        
       
   
 }
