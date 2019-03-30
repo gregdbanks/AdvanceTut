@@ -5,9 +5,9 @@ var width = 1000,
     
 var barPadding = 1;
 
-
+var maxCost = d3.max(oilData, d => d.inflation);
 var yearData = oilData.filter(d => d.year !== null);
-var inflationData = oilData.filter(d => d.inflation !== null);
+var inflationData = oilData.filter(d => d.inflation === maxCost);
 
 var initialBinCount = 16;
     
@@ -45,7 +45,9 @@ bars
     .style("text-anchor", "middle")
     .text("Price");
 
+
 updateRects(initialBinCount);
+console.log(inflationData)
 
     function updateRects(val) {
         var xScale = d3.scaleLinear()
@@ -61,7 +63,7 @@ updateRects(initialBinCount);
             
 
         var bins = histogram(yearData);
-        var bins2 = d3.max(inflationData, d => d.inflation);
+      
       
         
 
@@ -103,7 +105,7 @@ updateRects(initialBinCount);
         d3.select(".bin-count")
             .text("Number of bins: " + bins.length);
 
-            console.log(bins)
+            
         
         
         
