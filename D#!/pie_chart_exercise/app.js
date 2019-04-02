@@ -146,21 +146,43 @@
 //     .style('width', d => (d * 120) + 'px' )
 //     .text(d => d + ' miles' );
 
+
+
+
+
+
+var svgWidth = 500;
+var svgHeight = 300;
+var svg = d3.select('svg')
+    .attr("width", svgWidth)
+    .attr("height", svgHeight)
+    .attr("class", "bar-chart");
+
 var data = [80, 120, 60, 150, 200];
-var barHeight = 40;
-var barPadding = 2;
-var bar = d3.select('svg')
-    .selectAll('rect')
+var barPadding = 5;
+var barWidth = (svgWidth / data.length);
+var bar = svg.selectAll('rect')
     .data(data)
     .enter()
     .append('rect')
-    .attr('width', function (d) {
-        return d;
-    })
-    .attr('height', barHeight - 8)
-    .attr('fill', 'gray')
-    .attr('transform', function (d, i) {
-        return "translate(0," + i * barHeight + ")";
+    // .attr('width', function (d) {
+    //     return d;
+    // })
+    // .attr('height', barHeight - 8)
+    // .attr('fill', 'gray')
+    // .attr('display', 'inline-flex')
+    // .attr('transform', function (d, i) {
+    //     return "translate(0," + i * barHeight + ")";
+    .attr("y", function (d) {
+            return svgHeight - d
+        })
+        .attr("height", function (d) {
+            return d;
+        })
+        .attr("width", barWidth - barPadding)
+        .attr("transform", function (d, i) {
+                var translate = [barWidth * i, 0];
+                return "translate(" + translate + ")";
     });
 
 d3.select('#btn')
