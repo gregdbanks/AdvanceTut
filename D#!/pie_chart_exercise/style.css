@@ -1,8 +1,4 @@
-/* svg,
-input {
-  margin: 0 auto;
-  display: block;
-}
+/* 
 
 .bin-count {
   text-align: center;
@@ -22,7 +18,21 @@ body {
   font-size: 12px;
 } */
 
-rect {
-  padding: 20px;
+svg, #btn {
+  padding: 8px;
+  margin: 0 auto;
+  display: block;
 }
+
+h3 {
+  color: greenyellow;
+  text-align: center;
+}
+
+
+
+
+
+
+
 
