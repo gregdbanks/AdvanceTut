@@ -13,7 +13,6 @@ svg {
 }
 
 .tooltip {
-
   opacity: 0;
   position: absolute;
   pointer-events: none;
@@ -31,7 +30,7 @@ svg {
   content: ' ';
   position: absolute;
   border: 12px solid transparent;
-  border-bottom-color: blue;
+  /* border-bottom-color: blue; */
   top: -26px;
   left: 50%;
   margin-left: -6px;
