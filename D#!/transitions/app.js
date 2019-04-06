@@ -59,7 +59,7 @@ d3.select("input")
           return d.year === year;
         }))
         .transition()
-        .duration(2000)
+        .duration(10)
         .ease(d3.easeLinear)
         .delay((d,i) => i * 250)
         .on('start', function(d,i){
