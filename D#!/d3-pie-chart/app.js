@@ -59,9 +59,9 @@ function makeGraph(year) {
     update
         .enter()
         .append('path')
-            .classed('arc', true)
+            .classed('arc', false)
         .merge(update)
             .attr('fill', d => colorScale(d.data.continent))
-            .attr('stroke', 'gray')
+            .attr('stroke', 'blue')
             .attr('d', path)
 }
