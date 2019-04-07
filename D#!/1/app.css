@@ -1,18 +1,9 @@
 svg {
     border: 4px solid black;
+    width: 1650px;
+    height: 1490px;
    
-}
 
-text {
-    font: bold 48px monospace;
-}
-
-.enter {
-    fill: green;
-}
-
-.update {
-    fill: #333;
 }
 
 
