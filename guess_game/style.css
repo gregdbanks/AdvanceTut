@@ -20,14 +20,14 @@ body {
 
 .show {
   max-height: 1000px;
-  transition-duration: 1s;
+  transition-duration: 4s;
   display: block;
 }
 
 .hide {
   max-height: 0;
   overflow: hidden;
-  transition-duration: 1s;
+  transition-duration: 4s;
 }
 
 #start {
@@ -66,5 +66,5 @@ body {
 #word-list > li:not(.disabled):hover {
   color: yellow;
   font-size: 1.5em;
-  cursor: pointer;
+  cursor: grab;
 }
