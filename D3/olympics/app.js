@@ -8,8 +8,8 @@ var margin = {
         bottom: 30,
         left: 60
     },
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 760 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
 
 // set the ranges
 var x = d3.scaleBand()
@@ -86,7 +86,7 @@ d3.csv("test.csv", (error, data) => {
         .data(data)
         .enter().append("rect")
                     .attr("class", "bar")
-                    .attr("x", d => x(d.Counrty))
+                    .attr("x", d => x(d.Countries))
                     .attr("width", x.bandwidth())
                     .attr("y", d => y(d.GoldMedals))
                     .attr("height", d => height - y(d.GoldMedals));
@@ -100,6 +100,9 @@ d3.csv("test.csv", (error, data) => {
     // add the y Axis
     svg.append("g")
         .call(d3.axisLeft(y));
+
+    // add title
+    
 
 });
 

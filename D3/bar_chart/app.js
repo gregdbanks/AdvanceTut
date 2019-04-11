@@ -89,7 +89,7 @@ var svg = d3.select("body").append("svg")
                             .append("g")
                             .attr("transform",
                               "translate(" + margin.left + "," + margin.top + ")");
-                              //                  60               40
+
 
 // get the data
 d3.csv("sales.csv", (error, data) => {
