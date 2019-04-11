@@ -1,10 +1,38 @@
 html,
 body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     height: 100%;
+    
+}
+
+svg {
+    position: absolute;
+
+}
+
+img {
+    background-image: url("img/back.png");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
 }
 
 
 .bar {
-    fill: steelblue;
+    fill: rgb(214, 193, 74);
+}
+
+.title {
+    width: 760px;
+    text-align: center;
+    float: top;
+    position: absolute;
+    color: rgb(214, 193, 74);
+    text-shadow: -1px 0 0 #000000,
+    1px 1px 0 #000000,
+    2px -1px 0 #000000,
+    3px 0 0 #000000;
+
+   
+    
 }
