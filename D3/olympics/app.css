@@ -6,20 +6,20 @@ body {
     
 }
 
-svg {
-    position: absolute;
 
-}
 
-img {
-    background-image: url("img/back.png");
+.ringggg {
+    width: 460px;
+    height: 250px;
     background-repeat: no-repeat;
     background-color: #cccccc;
+    position: absolute;
 }
 
 
 .bar {
     fill: rgb(214, 193, 74);
+    border-radius: 4px
 }
 
 .title {
