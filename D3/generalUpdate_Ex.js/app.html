@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>D3</title>
-    <link rel="stylesheet" href="app.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>D3 and the DOM</title>
+  <link rel="stylesheet" href="app.css">
 </head>
-
 <body>
-    
-    <h1 class="title">D3 general update pattern</h1>
-    <svg width="960" height="500"></svg>
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="app.js"></script>
+    <div class="center">
+            <h1 id="page-title">This is my first D3 example!</h1>
+            <p class="first-paragraph">Here's my first paragraph.</p>
+            <p>Here are some reasons why d3 is cool:</p>
+            <ul>
+              <li>Makes data more engaging.</li>
+              <li>Has built-in math helpers.</li>
+              <li>Supports graph animations.</li>
+              <li>Makes drawing graph axes a breeze!</li>
+            </ul>
+    </div>
+  
+  <div class="outer">
+    Here's an outer div.
+    <div>
+      Here's an inner div.
+      <div>
+        Here's the last div.
+      </div>
+    </div>
+  </div>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="app.js"></script>
 </body>
-
 </html>
