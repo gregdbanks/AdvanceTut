@@ -1,8 +1,3 @@
-
-
-
-
-
 var width       = 600,
     height      = 600,
     barPadding  = 1,
@@ -63,6 +58,7 @@ d3.select("input")
     .property("value", minYear)
     .on('input', function() {
       var year = +d3.event.target.value;
+      
       yearData = birthData.filter(d => d.year === year);
       xScale.domain([0, d3.max(yearData, d => d.births)]);
       histogram.domain(xScale.domain())
