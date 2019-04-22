@@ -1,0 +1,6 @@
+Swaggy P   waffle iron 80  2 
+Swaggy P   blender 200 1
+Swaggy P   knife 10  4 
+Harry Balls  waffle iron 80  1 
+Harry Balls  knife 10 2
+Harry Balls  pot 20 3
